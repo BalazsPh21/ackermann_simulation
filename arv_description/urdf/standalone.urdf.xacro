@@ -12,11 +12,12 @@
 
     <xacro:arv />
     
+    <!--
     <gazebo>
         <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
             <robotNamespace>$(arg robot_namespace)</robotNamespace>
             <robotParam>$(arg description_name_xacro)</robotParam>
         </plugin>
     </gazebo>
-
+    -->
 </robot>
