@@ -13,7 +13,7 @@
             <parent link="${prefix}_HINGE"/>
             <child link="${prefix}_FRONT_WHEEL"/>
             <origin xyz="0 0 ${Y}" rpy="0 0 0" />
-            <axis xyz="0 1 0" rpy="0 0 0" />
+            <axis xyz="0 0 1" rpy="0 0 0" />
             <dynamics damping="1.0" friction="0.0"/>
             <limit effort="1" velocity="1"/>
             <joint_properties damping="0.2" friction="0.2"/>
@@ -199,21 +199,21 @@
 
         <!-- Fixed joint to add dummy inertia link -->
         <joint name="base_to_base_inertia" type="fixed">
-        <parent link="${base_link_name}"/>
-        <child link="base_inertia"/>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
+            <parent link="${base_link_name}"/>
+            <child link="base_inertia"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
         </joint>
 
         <!-- Dummy inertia link, because KDL cannot have inertia on the base link -->
         <link name="base_inertia">
-        <inertial>
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-            <mass value="${chassisMass}"/>
-            <xacro:box_inertia m="${chassisMass}"
-                        x="${chassisLength}"
-                        y="${chassisWidth}"
-                        z="${chassisHeight}"/>
-        </inertial>
+            <inertial>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <mass value="${chassisMass}"/>
+                <xacro:box_inertia m="${chassisMass}"
+                            x="${chassisLength}"
+                            y="${chassisWidth}"
+                            z="${chassisHeight}"/>
+            </inertial>
         </link>
 
     </xacro:macro>

@@ -7,10 +7,10 @@
   <maintainer email="michael@openrobotics.org">Michael Carroll</maintainer>
   <license>Apache 2.0</license>
   <author>Michael Carroll</author>
-  <author>Dharini Dutia</author>
 
+  <depend>ros_gz</depend>
+  <depend>sdformat_urdf</depend>
   <depend>joint_state_publisher_gui</depend>
-  <depend>robot_state_publisher</depend>
 
   <depend>arv_description</depend>
   <depend>arv_gazebo</depend>

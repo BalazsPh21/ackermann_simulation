@@ -160,7 +160,7 @@
     <parent link="LEFT_HINGE"/>
     <child link="LEFT_FRONT_WHEEL"/>
     <origin rpy="0 0 0" xyz="0 0 0.09"/>
-    <axis rpy="0 0 0" xyz="0 1 0"/>
+    <axis rpy="0 0 0" xyz="0 0 1"/>
     <dynamics damping="1.0" friction="0.0"/>
     <limit effort="1" velocity="1"/>
     <joint_properties damping="0.2" friction="0.2"/>
@@ -208,7 +208,7 @@
     <parent link="RIGHT_HINGE"/>
     <child link="RIGHT_FRONT_WHEEL"/>
     <origin rpy="0 0 0" xyz="0 0 -0.09"/>
-    <axis rpy="0 0 0" xyz="0 1 0"/>
+    <axis rpy="0 0 0" xyz="0 0 1"/>
     <dynamics damping="1.0" friction="0.0"/>
     <limit effort="1" velocity="1"/>
     <joint_properties damping="0.2" friction="0.2"/>
@@ -452,10 +452,7 @@
       <visualize>true</visualize>
     </sensor>
   </gazebo>
-  <gazebo reference="rslidar_base_mount_joint">
-    <preserveFixedJoint>true</preserveFixedJoint>
-  </gazebo>
-  <gazebo reference="rslidar_base_scan_joint">
+  <gazebo reference="lidar_joint">
     <preserveFixedJoint>true</preserveFixedJoint>
   </gazebo>
   <!--

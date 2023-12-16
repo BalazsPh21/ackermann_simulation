@@ -1,17 +1,16 @@
-<?xml version="1.0" ?>
 <sdf version='1.9'>
   <model name='arv'>
     <link name='base_link'>
       <inertial>
-        <pose>0.0008066002490660025 -8.955168119551682e-05 0.0005547945205479453 0 0 0</pose>
-        <mass>40.149999999999999</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>40</mass>
         <inertia>
-          <ixx>0.6932421153956515</ixx>
-          <ixy>0.00077336831880448322</ixy>
-          <ixz>-0.0047912054794520551</ixz>
-          <iyy>1.3598720529946551</iyy>
-          <iyz>0.00053193698630137</iyz>
-          <izz>1.3566980205695309</izz>
+          <ixx>0.68969666666666651</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.349446666666666</iyy>
+          <iyz>0</iyz>
+          <izz>1.349446666666666</izz>
         </inertia>
       </inertial>
       <collision name='base_link_collision'>
@@ -20,23 +19,6 @@
           <box>
             <size>0.605 0.41 0.197</size>
           </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
-      </collision>
-      <collision name='base_link_fixed_joint_lump__lidar_link_collision_1'>
-        <pose>0.2159 -0.02397 0.1485 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>0.0717</length>
-            <radius>0.0516</radius>
-          </cylinder>
         </geometry>
         <surface>
           <contact>
@@ -63,49 +45,6 @@
           <ambient>1 0 0.125 1</ambient>
         </material>
       </visual>
-      <visual name='base_link_fixed_joint_lump__lidar_link_visual_1'>
-        <pose>0.2159 -0.02397 0.1485 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>0.0717</length>
-            <radius>0.0516</radius>
-          </cylinder>
-        </geometry>
-      </visual>
-      <sensor name='gpu_lidar' type='gpu_lidar'>
-        <topic>/arv/scan</topic>
-        <update_rate>400</update_rate>
-        <lidar>
-          <scan>
-            <horizontal>
-              <samples>640</samples>
-              <resolution>1</resolution>
-              <min_angle>-1.396263</min_angle>
-              <max_angle>1.396263</max_angle>
-            </horizontal>
-            <vertical>
-              <samples>1</samples>
-              <resolution>1</resolution>
-              <min_angle>0</min_angle>
-              <max_angle>0</max_angle>
-            </vertical>
-          </scan>
-          <range>
-            <min>0.080000000000000002</min>
-            <max>10</max>
-            <resolution>0.01</resolution>
-          </range>
-          <noise>
-            <type>gaussian</type>
-            <mean>0</mean>
-            <stddev>0.001</stddev>
-          </noise>
-        </lidar>
-        <visualize>true</visualize>
-        <pose>0.2159 -0.02397 0.1485 0 -0 0</pose>
-        <ignition_frame_id>arv/lidar_link</ignition_frame_id>
-        <alwaysOn>1</alwaysOn>
-      </sensor>
     </link>
     <joint name='LEFT_HINGE_JOINT' type='revolute'>
       <pose relative_to='base_link'>0.2159 0.255 -0.0185 -1.570796326794896 0 0</pose>
@@ -156,7 +95,7 @@
       <parent>LEFT_HINGE</parent>
       <child>LEFT_FRONT_WHEEL</child>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 0 1</xyz>
         <limit>
           <effort>1</effort>
           <velocity>1</velocity>
@@ -352,7 +291,7 @@
       <parent>RIGHT_HINGE</parent>
       <child>RIGHT_FRONT_WHEEL</child>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 0 1</xyz>
         <limit>
           <effort>1</effort>
           <velocity>1</velocity>
@@ -575,13 +514,107 @@
         <ignition_frame_id>arv/imu_link</ignition_frame_id>
       </sensor>
     </link>
+    <joint name='lidar_joint' type='fixed'>
+      <pose relative_to='base_link'>0.2159 -0.02397 0.1485 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>lidar_link</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.20000000000000001</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='lidar_link'>
+      <pose relative_to='lidar_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.14999999999999999</mass>
+        <inertia>
+          <ixx>0.00016410712499999999</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00016410712499999999</iyy>
+          <iyz>0</iyz>
+          <izz>0.00019969200000000001</izz>
+        </inertia>
+      </inertial>
+      <collision name='lidar_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.0717</length>
+            <radius>0.0516</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='lidar_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.0717</length>
+            <radius>0.0516</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <sensor name='gpu_lidar' type='gpu_lidar'>
+        <topic>/arv/scan</topic>
+        <update_rate>400</update_rate>
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>640</samples>
+              <resolution>1</resolution>
+              <min_angle>-1.396263</min_angle>
+              <max_angle>1.396263</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.080000000000000002</min>
+            <max>10</max>
+            <resolution>0.01</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.001</stddev>
+          </noise>
+        </lidar>
+        <visualize>true</visualize>
+        <ignition_frame_id>arv/lidar_link</ignition_frame_id>
+        <alwaysOn>1</alwaysOn>
+      </sensor>
+    </link>
     <frame name='base_to_base_inertia' attached_to='base_link'>
       <pose>0 0 0 0 -0 0</pose>
     </frame>
     <frame name='base_inertia' attached_to='base_to_base_inertia'/>
-    <frame name='lidar_joint' attached_to='base_link'>
-      <pose>0.2159 -0.02397 0.1485 0 -0 0</pose>
-    </frame>
-    <frame name='lidar_link' attached_to='lidar_joint'/>
   </model>
 </sdf>
