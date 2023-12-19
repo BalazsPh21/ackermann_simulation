@@ -92,7 +92,7 @@
       <plugin
         filename="ignition-gazebo-odometry-publisher-system"
         name="ignition::gazebo::systems::OdometryPublisher">
-        <odom_frame>arv/odometry</odom_frame>
+        <odom_frame>arv/odom</odom_frame>
         <robot_base_frame>arv</robot_base_frame>
       </plugin>
     </model>

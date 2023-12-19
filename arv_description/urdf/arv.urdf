@@ -419,7 +419,7 @@
   </link>
   <gazebo reference="lidar_link">
     <sensor name="gpu_lidar" type="gpu_lidar">
-      <topic>/arv/scan</topic>
+      <topic>/scan</topic>
       <update_rate>400</update_rate>
       <ignition_frame_id>arv/lidar_link</ignition_frame_id>
       <lidar>
