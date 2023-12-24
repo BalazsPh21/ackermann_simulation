@@ -38,17 +38,6 @@ def generate_launch_description():
         ])}.items(),
     )
 
-    arv_joint_state_publisher = Node(
-        package='joint_state_publisher',
-        executable='joint_state_publisher',
-        name='arv_joint_state_publisher',
-        output='screen',
-        parameters=[
-            {'use_gui': True},
-            {'rate': True}
-        ]
-    )
-
     # Takes the description and joint angles as inputs and publishes the 3D poses of the robot links
     arv_robot_state_publisher = Node(
         package='robot_state_publisher',
@@ -85,7 +74,6 @@ def generate_launch_description():
         DeclareLaunchArgument('rviz', default_value='true',
                               description='Open RViz.'),
         bridge,
-        arv_joint_state_publisher,
         arv_robot_state_publisher,
         rviz
     ])

@@ -10,6 +10,9 @@
       name="ignition::gazebo::systems::Sensors">
       <render_engine>ogre2</render_engine>
     </plugin>
+    <plugin filename="libignition-gazebo-imu-system.so"
+        name="ignition::gazebo::systems::Imu">
+    </plugin>
     <plugin
       filename="ignition-gazebo-scene-broadcaster-system"
       name="ignition::gazebo::systems::SceneBroadcaster">
@@ -20,11 +23,11 @@
     </plugin>
     <plugin
       filename="BasicSystem"
-      name="arv_gazebo::BasicSystem">
+      name="ack_gazebo::BasicSystem">
     </plugin>
     <plugin
       filename="FullSystem"
-      name="arv_gazebo::FullSystem">
+      name="ack_gazebo::FullSystem">
     </plugin>
 
     <light name="sun" type="directional">
@@ -88,7 +91,7 @@
         <static_publisher>true</static_publisher>
         <static_update_frequency>1</static_update_frequency>
       </plugin>
-
+      
       <plugin
         filename="ignition-gazebo-odometry-publisher-system"
         name="ignition::gazebo::systems::OdometryPublisher">

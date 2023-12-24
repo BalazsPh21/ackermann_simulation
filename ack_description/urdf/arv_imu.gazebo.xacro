@@ -11,7 +11,7 @@
 
         <xacro:property name="imu_update_rate"		value="400"/>
         <xacro:property name="imu_link"  			value="imu_link"/>
-        <xacro:property name="imu_topic" 			value="/arv/imu"/>
+        <xacro:property name="imu_topic" 			value="/imu"/>
         <xacro:property name="imu_calibration_service_name" value="/imu/calibrate"/>
         <xacro:property name="acceleration_offset"          value="0.0 0.0 0.0"/>
         <xacro:property name="acceleration_drift"           value="0.0 0.0 0.0"/>
@@ -25,16 +25,6 @@
         <xacro:property name="heading_drift" 		value="0.0"/>
         <xacro:property name="heading_drift_frequency" 	value="0.0"/>
         <xacro:property name="heading_gaussian_noise" 	value="0.0"/>
-
-        <gazebo reference="imu_link">
-            <sensor name="imu_sensor" type="imu">
-                <always_on>1</always_on>
-                <update_rate>${imu_update_rate}</update_rate>
-                <ignition_frame_id>arv/imu_link</ignition_frame_id>
-                <visualize>true</visualize>
-                <topic>${imu_topic}</topic>
-            </sensor>
-        </gazebo>
 
         <!-- Imu is fixed to the base link -->
         <joint name="imu_joint" type="fixed">
@@ -62,17 +52,21 @@
                     <box size=".001 .001 .001"/>
                 </geometry>
             </collision>
-            <!--
-            <material name="orange">
-                <color rgba="255 108 10 255"/>
-            </material>
-            -->
         </link>
+
+        <gazebo reference="imu_link">
+            <sensor name="imu_sensor" type="imu">
+                <always_on>1</always_on>
+                <update_rate>${imu_update_rate}</update_rate>
+                <ignition_frame_id>arv/imu_link</ignition_frame_id>
+                <visualize>true</visualize>
+                <topic>${imu_topic}</topic>
+            </sensor>
+        </gazebo>
 
         <gazebo reference="${imu_link}">
             <material>Gazebo/Orange</material>
         </gazebo>
-
 
         <gazebo reference="imu_joint">
             <preserveFixedJoint>true</preserveFixedJoint>

@@ -11,7 +11,7 @@ imu_sensor_broadcaster:
   }
   frame_id: {
     type: string,
-    default_value: "",
+    default_value: "imu_link",
     description: "Sensor's frame_id in which values are published.",
     validation: {
       not_empty<>: null

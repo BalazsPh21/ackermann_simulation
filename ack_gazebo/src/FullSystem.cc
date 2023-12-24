@@ -13,15 +13,15 @@
 // This is required to register the plugin. Make sure the interfaces match
 // what's in the header.
 IGNITION_ADD_PLUGIN(
-    arv_gazebo::FullSystem,
+    ack_gazebo::FullSystem,
     gz::sim::System,
-    arv_gazebo::FullSystem::ISystemConfigure,
-    arv_gazebo::FullSystem::ISystemPreUpdate,
-    arv_gazebo::FullSystem::ISystemUpdate,
-    arv_gazebo::FullSystem::ISystemPostUpdate
+    ack_gazebo::FullSystem::ISystemConfigure,
+    ack_gazebo::FullSystem::ISystemPreUpdate,
+    ack_gazebo::FullSystem::ISystemUpdate,
+    ack_gazebo::FullSystem::ISystemPostUpdate
 )
 
-namespace arv_gazebo 
+namespace ack_gazebo 
 {
 
 void FullSystem::Configure(const gz::sim::Entity &_entity,
@@ -29,7 +29,7 @@ void FullSystem::Configure(const gz::sim::Entity &_entity,
                 gz::sim::EntityComponentManager &_ecm,
                 gz::sim::EventManager &_eventManager)
 {
-  igndbg << "arv_gazebo::FullSystem::Configure on entity: " << _entity << std::endl;
+  igndbg << "ack_gazebo::FullSystem::Configure on entity: " << _entity << std::endl;
 }
 
 void FullSystem::PreUpdate(const gz::sim::UpdateInfo &_info,
@@ -37,7 +37,7 @@ void FullSystem::PreUpdate(const gz::sim::UpdateInfo &_info,
 {
   if (!_info.paused && _info.iterations % 1000 == 0)
   {
-    igndbg << "arv_gazebo::FullSystem::PreUpdate" << std::endl;
+    igndbg << "ack_gazebo::FullSystem::PreUpdate" << std::endl;
   }
 }
 
@@ -46,7 +46,7 @@ void FullSystem::Update(const gz::sim::UpdateInfo &_info,
 {
   if (!_info.paused && _info.iterations % 1000 == 0)
   {
-    igndbg << "arv_gazebo::FullSystem::Update" << std::endl;
+    igndbg << "ack_gazebo::FullSystem::Update" << std::endl;
   }
 }
 
@@ -55,8 +55,8 @@ void FullSystem::PostUpdate(const gz::sim::UpdateInfo &_info,
 {
   if (!_info.paused && _info.iterations % 1000 == 0)
   {
-    igndbg << "arv_gazebo::FullSystem::PostUpdate" << std::endl;
+    igndbg << "ack_gazebo::FullSystem::PostUpdate" << std::endl;
   }
 }
 
-}  // namespace arv_gazebo
+}  // namespace ack_gazebo

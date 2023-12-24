@@ -1,11 +1,11 @@
-#ifndef ARV_GAZEBO__BASIC_SYSTEM_HH_
-#define ARV_GAZEBO__BASIC_SYSTEM_HH_
+#ifndef ACK_GAZEBO__BASIC_SYSTEM_HH_
+#define ACK_GAZEBO__BASIC_SYSTEM_HH_
 
 // The only required include in the header is this one.
 // All others will depend on what your plugin does.
 #include <gz/sim/System.hh>
 
-namespace arv_gazebo
+namespace ack_gazebo
 {
   // This is the main plugin's class. It must inherit from System and at least
   // one other interface.
