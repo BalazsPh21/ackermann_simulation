@@ -36,13 +36,13 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.605 0.41 0.197"/>
+        <box size="0.57 0.29 0.075"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.605 0.41 0.197"/>
+        <box size="0.57 0.29 0.075"/>
       </geometry>
       <material name="base_material">
         <color rgba="0.8 0.0 0.1 1.0"/>
@@ -62,17 +62,17 @@
   <link name="base_inertia">
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0"/>
-      <mass value="40"/>
-      <inertia ixx="0.6896966666666665" ixy="0" ixz="0" iyy="1.3494466666666665" iyz="0" izz="1.3494466666666665"/>
+      <mass value="2.3"/>
+      <inertia ixx="0.017197291666666666" ixy="0" ixz="0" iyy="0.06335062499999998" iyz="0" izz="0.06335062499999998"/>
     </inertial>
   </link>
   <joint name="LEFT_HINGE_JOINT" type="revolute">
     <parent link="base_link"/>
     <child link="LEFT_HINGE"/>
-    <origin rpy="-1.5707963267948966 0.0 0.0" xyz="0.2159 0.255 -0.018500000000000003"/>
-    <axis rpy="0 0 0" xyz="0 1 0"/>
+    <origin rpy="-1.5707963267948966 0.0 0.0" xyz="0.162 0.15999999999999998 -0.0295"/>
+    <axis rpy="0 0 0" xyz="0 -1 0"/>
     <dynamics damping="0.0" friction="0.0"/>
-    <limit effort="100" lower="-1" upper="1" velocity="1"/>
+    <limit effort="100" lower="-0.53" upper="0.53" velocity="1"/>
   </joint>
   <link name="LEFT_HINGE">
     <!--
@@ -84,13 +84,13 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <cylinder length="0.1" radius="0.06"/>
+        <cylinder length="0.03" radius="0.01"/>
       </geometry>
     </visual>
     <inertial>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-      <mass value="0.2"/>
-      <inertia ixx="0.0003466666666666666" ixy="0" ixz="0" iyy="0.0003466666666666666" iyz="0" izz="0.00035999999999999997"/>
+      <mass value="0.03"/>
+      <inertia ixx="2.9999999999999997e-06" ixy="0" ixz="0" iyy="2.9999999999999997e-06" iyz="0" izz="1.4999999999999998e-06"/>
     </inertial>
   </link>
   <gazebo reference="LEFT_WHEEL_HINGE">
@@ -114,10 +114,10 @@
   <joint name="RIGHT_HINGE_JOINT" type="revolute">
     <parent link="base_link"/>
     <child link="RIGHT_HINGE"/>
-    <origin rpy="-1.5707963267948966 0.0 0.0" xyz="0.2159 -0.255 -0.018500000000000003"/>
-    <axis rpy="0 0 0" xyz="0 1 0"/>
+    <origin rpy="-1.5707963267948966 0.0 0.0" xyz="0.162 -0.15999999999999998 -0.0295"/>
+    <axis rpy="0 0 0" xyz="0 -1 0"/>
     <dynamics damping="0.0" friction="0.0"/>
-    <limit effort="100" lower="-1" upper="1" velocity="1"/>
+    <limit effort="100" lower="-0.53" upper="0.53" velocity="1"/>
   </joint>
   <link name="RIGHT_HINGE">
     <!--
@@ -129,13 +129,13 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <cylinder length="0.1" radius="0.06"/>
+        <cylinder length="0.03" radius="0.01"/>
       </geometry>
     </visual>
     <inertial>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-      <mass value="0.2"/>
-      <inertia ixx="0.0003466666666666666" ixy="0" ixz="0" iyy="0.0003466666666666666" iyz="0" izz="0.00035999999999999997"/>
+      <mass value="0.03"/>
+      <inertia ixx="2.9999999999999997e-06" ixy="0" ixz="0" iyy="2.9999999999999997e-06" iyz="0" izz="1.4999999999999998e-06"/>
     </inertial>
   </link>
   <gazebo reference="RIGHT_WHEEL_HINGE">
@@ -159,7 +159,7 @@
   <joint name="LEFT_FRONT_WHEEL_JOINT" type="continuous">
     <parent link="LEFT_HINGE"/>
     <child link="LEFT_FRONT_WHEEL"/>
-    <origin rpy="0 0 0" xyz="0 0 0.09"/>
+    <origin rpy="0 0 0" xyz="0 0 0.0335"/>
     <axis rpy="0 0 0" xyz="0 0 1"/>
     <dynamics damping="1.0" friction="0.0"/>
     <limit effort="1" velocity="1"/>
@@ -169,19 +169,19 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.08" radius="0.15"/>
+        <cylinder length="0.037" radius="0.055"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.08" radius="0.15"/>
+        <cylinder length="0.037" radius="0.055"/>
       </geometry>
     </visual>
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0"/>
-      <mass value="5"/>
-      <inertia ixx="0.03079166666666666" ixy="0" ixz="0" iyy="0.03079166666666666" iyz="0" izz="0.056249999999999994"/>
+      <mass value="0.08"/>
+      <inertia ixx="6.962666666666667e-05" ixy="0" ixz="0" iyy="6.962666666666667e-05" iyz="0" izz="0.00012100000000000001"/>
     </inertial>
   </link>
   <gazebo reference="LEFT_FRONT_WHEEL">
@@ -207,7 +207,7 @@
   <joint name="RIGHT_FRONT_WHEEL_JOINT" type="continuous">
     <parent link="RIGHT_HINGE"/>
     <child link="RIGHT_FRONT_WHEEL"/>
-    <origin rpy="0 0 0" xyz="0 0 -0.09"/>
+    <origin rpy="0 0 0" xyz="0 0 -0.0335"/>
     <axis rpy="0 0 0" xyz="0 0 1"/>
     <dynamics damping="1.0" friction="0.0"/>
     <limit effort="1" velocity="1"/>
@@ -217,19 +217,19 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.08" radius="0.15"/>
+        <cylinder length="0.037" radius="0.055"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.08" radius="0.15"/>
+        <cylinder length="0.037" radius="0.055"/>
       </geometry>
     </visual>
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0"/>
-      <mass value="5"/>
-      <inertia ixx="0.03079166666666666" ixy="0" ixz="0" iyy="0.03079166666666666" iyz="0" izz="0.056249999999999994"/>
+      <mass value="0.08"/>
+      <inertia ixx="6.962666666666667e-05" ixy="0" ixz="0" iyy="6.962666666666667e-05" iyz="0" izz="0.00012100000000000001"/>
     </inertial>
   </link>
   <gazebo reference="RIGHT_FRONT_WHEEL">
@@ -255,8 +255,8 @@
   <joint name="LEFT_REAR_WHEEL_JOINT" type="continuous">
     <parent link="base_link"/>
     <child link="LEFT_REAR_WHEEL"/>
-    <origin rpy="1.5707963267948966 0 0" xyz="-0.2159 0.345 -0.018500000000000003"/>
-    <axis rpy="0 0 0" xyz="0 0 1"/>
+    <origin rpy="1.5707963267948966 0 0" xyz="-0.162 0.1735 -0.0295"/>
+    <axis rpy="0 0 0" xyz="0 0 -1"/>
     <dynamics damping="1.0" friction="0.0"/>
     <limit effort="1" velocity="1"/>
     <joint_properties damping="0.2" friction="0.2"/>
@@ -265,19 +265,19 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.08" radius="0.15"/>
+        <cylinder length="0.037" radius="0.055"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.08" radius="0.15"/>
+        <cylinder length="0.037" radius="0.055"/>
       </geometry>
     </visual>
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0"/>
-      <mass value="5"/>
-      <inertia ixx="0.03079166666666666" ixy="0" ixz="0" iyy="0.03079166666666666" iyz="0" izz="0.056249999999999994"/>
+      <mass value="0.08"/>
+      <inertia ixx="6.962666666666667e-05" ixy="0" ixz="0" iyy="6.962666666666667e-05" iyz="0" izz="0.00012100000000000001"/>
     </inertial>
   </link>
   <gazebo reference="LEFT_REAR_WHEEL">
@@ -303,8 +303,8 @@
   <joint name="RIGHT_REAR_WHEEL_JOINT" type="continuous">
     <parent link="base_link"/>
     <child link="RIGHT_REAR_WHEEL"/>
-    <origin rpy="1.5707963267948966 0 0" xyz="-0.2159 -0.345 -0.018500000000000003"/>
-    <axis rpy="0 0 0" xyz="0 0 1"/>
+    <origin rpy="1.5707963267948966 0 0" xyz="-0.162 -0.1735 -0.0295"/>
+    <axis rpy="0 0 0" xyz="0 0 -1"/>
     <dynamics damping="1.0" friction="0.0"/>
     <limit effort="1" velocity="1"/>
     <joint_properties damping="0.2" friction="0.2"/>
@@ -313,19 +313,19 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.08" radius="0.15"/>
+        <cylinder length="0.037" radius="0.055"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.08" radius="0.15"/>
+        <cylinder length="0.037" radius="0.055"/>
       </geometry>
     </visual>
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0"/>
-      <mass value="5"/>
-      <inertia ixx="0.03079166666666666" ixy="0" ixz="0" iyy="0.03079166666666666" iyz="0" izz="0.056249999999999994"/>
+      <mass value="0.08"/>
+      <inertia ixx="6.962666666666667e-05" ixy="0" ixz="0" iyy="6.962666666666667e-05" iyz="0" izz="0.00012100000000000001"/>
     </inertial>
   </link>
   <gazebo reference="RIGHT_REAR_WHEEL">
@@ -350,14 +350,14 @@
   </transmission>
   <!-- Imu is fixed to the base link -->
   <joint name="imu_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="-0.2159 -0.02397 0.10350000000000001"/>
+    <origin rpy="0 0 0" xyz="-0.162 0 0.042499999999999996"/>
     <parent link="base_link"/>
     <child link="imu_link"/>
   </joint>
   <!-- Imu link -->
   <link name="imu_link">
     <inertial>
-      <mass value="0.001"/>
+      <mass value="0.01"/>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.000001" iyz="0" izz="0.0001"/>
     </inertial>
@@ -373,11 +373,6 @@
         <box size=".001 .001 .001"/>
       </geometry>
     </collision>
-    <!--
-            <material name="orange">
-                <color rgba="255 108 10 255"/>
-            </material>
-            -->
   </link>
   <gazebo reference="imu_link">
     <sensor name="imu_sensor" type="imu">
@@ -395,7 +390,7 @@
     <preserveFixedJoint>true</preserveFixedJoint>
   </gazebo>
   <joint name="lidar_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0.2159 -0.02397 0.14850000000000002"/>
+    <origin rpy="0 0 0" xyz="0.162 0 0.0875"/>
     <parent link="base_link"/>
     <child link="lidar_link"/>
   </joint>
@@ -458,23 +453,23 @@
   <gazebo>
     <plugin filename="ignition-gazebo-ackermann-steering-system" name="ignition::gazebo::systems::AckermannSteering">
       <left_joint>LEFT_FRONT_WHEEL_JOINT</left_joint>
+      <left_joint>LEFT_REAR_WHEEL_JOINT</left_joint>
       <right_joint>RIGHT_FRONT_WHEEL_JOINT</right_joint>
+      <right_joint>RIGHT_REAR_WHEEL_JOINT</right_joint>
       <left_steering_joint>LEFT_HINGE_JOINT</left_steering_joint>
       <right_steering_joint>RIGHT_HINGE_JOINT</right_steering_joint>
-      <wheel_separation>1.25</wheel_separation>
-      <kingpin_width>0.8</kingpin_width>
-      <wheel_base>1.0</wheel_base>
+      <wheel_separation>0.47</wheel_separation>
+      <kingpin_width>0.47</kingpin_width>
+      <wheel_base>0.324</wheel_base>
       <steering_limit>0.5</steering_limit>
-      <wheel_radius>0.3</wheel_radius>
+      <wheel_radius>0.15</wheel_radius>
       <odom_publish_frequency>1</odom_publish_frequency>
-      <min_velocity>0</min_velocity>
+      <min_velocity>-10</min_velocity>
       <max_velocity>10</max_velocity>
-      <min_acceleration>0</min_acceleration>
+      <min_acceleration>-10</min_acceleration>
       <max_acceleration>10</max_acceleration>
-      <min_jerk>-1</min_jerk>
-      <max_jerk>1</max_jerk>
-      <topic>arv/cmd_vel</topic>
-      <odom_topic>arv/odometry</odom_topic>
+      <min_jerk>-10</min_jerk>
+      <max_jerk>10</max_jerk>
     </plugin>
   </gazebo>
 </robot>

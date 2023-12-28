@@ -3,7 +3,7 @@
   <xacro:macro name="LIDAR" params="base_link">
     <xacro:property name="lidar_base_link"		value="${base_link}"/>
     <xacro:property name="lidar_origin_rpy"		value="0 0 0"/>
-    <xacro:property name="lidar_origin_xyz"		value="${hingeX} -0.02397 ${chassisHeight/2.0+0.05}"/>
+    <xacro:property name="lidar_origin_xyz"		value="${hingeX} 0 ${chassisHeight/2.0+0.05}"/>
     <xacro:property name="lidar_height"		value="0.0717"/>
     <xacro:property name="lidar_radius"		value="0.0516"/>
     <xacro:property name="lidar_mass"		value="0.15"/>

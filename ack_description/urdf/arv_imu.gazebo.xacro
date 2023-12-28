@@ -7,7 +7,7 @@
         <!--                              Imu  Properties 				          	-->
         <xacro:property name="imu_base_link"		value="${base_link}"/>
         <xacro:property name="imu_origin_rpy"		value="0 0 0"/>
-        <xacro:property name="imu_origin_xyz"		value="-0.2159 -0.02397 ${chassisHeight/2.0+0.005}"/>
+        <xacro:property name="imu_origin_xyz"		value="${backWheelX} 0 ${chassisHeight/2.0+0.005}"/>
 
         <xacro:property name="imu_update_rate"		value="400"/>
         <xacro:property name="imu_link"  			value="imu_link"/>
@@ -36,7 +36,7 @@
         <!-- Imu link -->
         <link name="${imu_link}">
             <inertial>
-                <mass value="0.001"/>
+                <mass value="0.01"/>
                 <origin rpy="0 0 0" xyz="0 0 0"/>
                 <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.000001" iyz="0" izz="0.0001"/>
             </inertial>
