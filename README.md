@@ -43,5 +43,5 @@ Welcome to the ROS2 Ackermann-Steering Car Simulation project! This repository a
 1. Launch the simulation environment:
 
     ```bash
-    ros2 launch arv_bringup arv_bringup.launch.py
+    ros2 launch ack_bringup ack_bringup.launch.py
     ```
