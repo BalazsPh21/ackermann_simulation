@@ -2,7 +2,10 @@
 
 ## Overview
 
-Welcome to the ROS2 Ackermann-Steering Car Simulation project! This repository aims to provide a straightforward simulation environment for an Ackermann-steering car using ROS2 Humble and Gazebo Fortress. 
+Welcome to the ROS2 Ackermann-Steering Car Simulation project! This repository aims to provide a straightforward simulation environment for an Ackermann-steering car using ROS2 Humble and Gazebo Fortress.
+
+![rviz screenshot](img/rviz.png)
+![gazebo screenshot](img/gazebo.png)
 
 ## Getting Started
 
