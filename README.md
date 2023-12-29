@@ -23,7 +23,7 @@ Welcome to the ROS2 Ackermann-Steering Car Simulation project! This repository a
 2. Navigate to the workspace:
 
     ```bash
-    cd ros2-autonomous-ackermann-car
+    cd ack_ws
     ```
 
 3. Build the project from your workspace:
@@ -35,7 +35,7 @@ Welcome to the ROS2 Ackermann-Steering Car Simulation project! This repository a
 4. Source the setup file:
 
     ```bash
-    source install/setup.bash
+    source install/setup.sh
     ```
 
 ### Running the Simulation
