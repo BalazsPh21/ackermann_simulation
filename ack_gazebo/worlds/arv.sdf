@@ -22,10 +22,6 @@
       name="ignition::gazebo::systems::SceneBroadcaster">
     </plugin>
     <plugin
-      filename="ignition-gazebo-user-commands-system"
-      name="ignition::gazebo::systems::UserCommands">
-    </plugin>
-    <plugin
       filename="BasicSystem"
       name="ack_gazebo::BasicSystem">
     </plugin>
