@@ -8,14 +8,14 @@
 
     <!--    Model macros    -->
     <!-- Front Wheel -->
-    <xacro:macro name="front_wheel" params="prefix X Y friction_coeff:=0.2 transmission_reduction:=1" >
+    <xacro:macro name="front_wheel" params="prefix X Y friction_coeff:=0.7 transmission_reduction:=1" >
         <joint name="${prefix}_FRONT_WHEEL_JOINT" type="continuous">
             <parent link="${prefix}_HINGE"/>
             <child link="${prefix}_FRONT_WHEEL"/>
             <origin xyz="0 0 ${Y}" rpy="0 0 0" />
             <axis xyz="0 0 1" rpy="0 0 0" />
-            <dynamics damping="1.0" friction="0.0"/>
-            <limit effort="1" velocity="1"/>
+            <dynamics damping="0.0" friction="0.0"/>
+            <limit effort="100" velocity="200"/>
             <joint_properties damping="0.2" friction="0.2"/>
         </joint>
 
@@ -64,7 +64,7 @@
     </xacro:macro>
 
     <!-- Front Hinge -->
-    <xacro:macro name="hinge" params="prefix X Y friction_coeff:=0.2 transmission_reduction:=1">
+    <xacro:macro name="hinge" params="prefix X Y">
         <joint name="${prefix}_HINGE_JOINT" type="revolute">
             <parent link="${base_link_name}"/>
             <child link="${prefix}_HINGE"/>
@@ -95,8 +95,8 @@
         </link>
 
         <gazebo reference="${prefix}_WHEEL_HINGE">
-            <mu1 value="${friction_coeff}"/>
-            <mu2 value="${friction_coeff}"/>
+            <mu1 value="0.0"/>
+            <mu2 value="0.0"/>
             <kp>10000000.0</kp>
             <kd>1.0</kd>
             <fdir1 value="0 1 0"/>
@@ -110,21 +110,21 @@
             </joint>
             <actuator name="${prefix}_ACTUATOR">
                 <hardwareInterface>EffortJointInterface</hardwareInterface>
-                <mechanicalReduction>${transmission_reduction}</mechanicalReduction>
+                <mechanicalReduction>1</mechanicalReduction>
             </actuator>
         </transmission>
 
     </xacro:macro>
 
     <!-- Rear Wheel -->
-    <xacro:macro name="rear_wheel" params="prefix X Y friction_coeff:=0.2 transmission_reduction:=1" >
+    <xacro:macro name="rear_wheel" params="prefix X Y friction_coeff:=0.7 transmission_reduction:=1" >
         <joint name="${prefix}_REAR_WHEEL_JOINT" type="continuous">
             <parent link="${base_link_name}"/>
             <child link="${prefix}_REAR_WHEEL"/>
             <origin xyz="${X} ${Y} ${wheelHeight - chassisHeight/2.0}" rpy="${PI/2} 0 0" />
             <axis xyz="0 0 -1" rpy="0 0 0" />
-            <dynamics damping="1.0" friction="0.0"/>
-            <limit effort="1" velocity="1"/>
+            <dynamics damping="0.0" friction="0.0"/>
+            <limit effort="100" velocity="200"/>
             <joint_properties damping="0.2" friction="0.2"/>
         </joint>
 
@@ -218,7 +218,7 @@
 
     </xacro:macro>
     
-    <xacro:macro name="arv" params="wheel_joint_type:=continuous lidar:=true simulation:=true">
+    <xacro:macro name="arv">
         <xacro:chassis/>
         
         <xacro:hinge prefix="LEFT" 

@@ -94,8 +94,8 @@
     </inertial>
   </link>
   <gazebo reference="LEFT_WHEEL_HINGE">
-    <mu1 value="0.2"/>
-    <mu2 value="0.2"/>
+    <mu1 value="0.0"/>
+    <mu2 value="0.0"/>
     <kp>10000000.0</kp>
     <kd>1.0</kd>
     <fdir1 value="0 1 0"/>
@@ -139,8 +139,8 @@
     </inertial>
   </link>
   <gazebo reference="RIGHT_WHEEL_HINGE">
-    <mu1 value="0.2"/>
-    <mu2 value="0.2"/>
+    <mu1 value="0.0"/>
+    <mu2 value="0.0"/>
     <kp>10000000.0</kp>
     <kd>1.0</kd>
     <fdir1 value="0 1 0"/>
@@ -161,8 +161,8 @@
     <child link="LEFT_FRONT_WHEEL"/>
     <origin rpy="0 0 0" xyz="0 0 0.0335"/>
     <axis rpy="0 0 0" xyz="0 0 1"/>
-    <dynamics damping="1.0" friction="0.0"/>
-    <limit effort="1" velocity="1"/>
+    <dynamics damping="0.0" friction="0.0"/>
+    <limit effort="100" velocity="200"/>
     <joint_properties damping="0.2" friction="0.2"/>
   </joint>
   <link name="LEFT_FRONT_WHEEL">
@@ -209,8 +209,8 @@
     <child link="RIGHT_FRONT_WHEEL"/>
     <origin rpy="0 0 0" xyz="0 0 -0.0335"/>
     <axis rpy="0 0 0" xyz="0 0 1"/>
-    <dynamics damping="1.0" friction="0.0"/>
-    <limit effort="1" velocity="1"/>
+    <dynamics damping="0.0" friction="0.0"/>
+    <limit effort="100" velocity="200"/>
     <joint_properties damping="0.2" friction="0.2"/>
   </joint>
   <link name="RIGHT_FRONT_WHEEL">
@@ -257,8 +257,8 @@
     <child link="LEFT_REAR_WHEEL"/>
     <origin rpy="1.5707963267948966 0 0" xyz="-0.162 0.1735 -0.0295"/>
     <axis rpy="0 0 0" xyz="0 0 -1"/>
-    <dynamics damping="1.0" friction="0.0"/>
-    <limit effort="1" velocity="1"/>
+    <dynamics damping="0.0" friction="0.0"/>
+    <limit effort="100" velocity="200"/>
     <joint_properties damping="0.2" friction="0.2"/>
   </joint>
   <link name="LEFT_REAR_WHEEL">
@@ -305,8 +305,8 @@
     <child link="RIGHT_REAR_WHEEL"/>
     <origin rpy="1.5707963267948966 0 0" xyz="-0.162 -0.1735 -0.0295"/>
     <axis rpy="0 0 0" xyz="0 0 -1"/>
-    <dynamics damping="1.0" friction="0.0"/>
-    <limit effort="1" velocity="1"/>
+    <dynamics damping="0.0" friction="0.0"/>
+    <limit effort="100" velocity="200"/>
     <joint_properties damping="0.2" friction="0.2"/>
   </joint>
   <link name="RIGHT_REAR_WHEEL">
@@ -463,13 +463,14 @@
       <wheel_base>0.324</wheel_base>
       <steering_limit>0.5</steering_limit>
       <wheel_radius>0.15</wheel_radius>
-      <odom_publish_frequency>1</odom_publish_frequency>
+      <odom_publish_frequency>50</odom_publish_frequency>
       <min_velocity>-10</min_velocity>
       <max_velocity>10</max_velocity>
       <min_acceleration>-10</min_acceleration>
       <max_acceleration>10</max_acceleration>
       <min_jerk>-10</min_jerk>
       <max_jerk>10</max_jerk>
+      <odom_topic>arv/odom</odom_topic>
     </plugin>
   </gazebo>
 </robot>

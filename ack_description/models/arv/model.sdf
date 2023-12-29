@@ -97,13 +97,13 @@
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <effort>1</effort>
-          <velocity>1</velocity>
+          <effort>100</effort>
+          <velocity>200</velocity>
           <lower>-10000000000000000</lower>
           <upper>10000000000000000</upper>
         </limit>
         <dynamics>
-          <damping>1</damping>
+          <damping>0</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -173,13 +173,13 @@
       <axis>
         <xyz>0 0 -1</xyz>
         <limit>
-          <effort>1</effort>
-          <velocity>1</velocity>
+          <effort>100</effort>
+          <velocity>200</velocity>
           <lower>-10000000000000000</lower>
           <upper>10000000000000000</upper>
         </limit>
         <dynamics>
-          <damping>1</damping>
+          <damping>0</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -293,13 +293,13 @@
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <effort>1</effort>
-          <velocity>1</velocity>
+          <effort>100</effort>
+          <velocity>200</velocity>
           <lower>-10000000000000000</lower>
           <upper>10000000000000000</upper>
         </limit>
         <dynamics>
-          <damping>1</damping>
+          <damping>0</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -369,13 +369,13 @@
       <axis>
         <xyz>0 0 -1</xyz>
         <limit>
-          <effort>1</effort>
-          <velocity>1</velocity>
+          <effort>100</effort>
+          <velocity>200</velocity>
           <lower>-10000000000000000</lower>
           <upper>10000000000000000</upper>
         </limit>
         <dynamics>
-          <damping>1</damping>
+          <damping>0</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -624,13 +624,14 @@
       <wheel_base>0.324</wheel_base>
       <steering_limit>0.5</steering_limit>
       <wheel_radius>0.15</wheel_radius>
-      <odom_publish_frequency>1</odom_publish_frequency>
+      <odom_publish_frequency>50</odom_publish_frequency>
       <min_velocity>-10</min_velocity>
       <max_velocity>10</max_velocity>
       <min_acceleration>-10</min_acceleration>
       <max_acceleration>10</max_acceleration>
       <min_jerk>-10</min_jerk>
       <max_jerk>10</max_jerk>
+      <odom_topic>arv/odom</odom_topic>
     </plugin>
     <frame name='base_to_base_inertia' attached_to='base_link'>
       <pose>0 0 0 0 -0 0</pose>

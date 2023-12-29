@@ -6,6 +6,10 @@
       name="ignition::gazebo::systems::Physics">
     </plugin>
     <plugin
+      filename="ignition-gazebo-user-commands-system"
+      name="ignition::gazebo::systems::UserCommands">
+    </plugin>
+    <plugin
       filename="ignition-gazebo-sensors-system"
       name="ignition::gazebo::systems::Sensors">
       <render_engine>ogre2</render_engine>
@@ -77,7 +81,7 @@
       <include merge="true">
         <uri>package://ack_description/models/arv</uri>
       </include>
-
+      
       <plugin
         filename="ignition-gazebo-joint-state-publisher-system"
         name="ignition::gazebo::systems::JointStatePublisher">
@@ -97,6 +101,31 @@
         name="ignition::gazebo::systems::OdometryPublisher">
         <odom_frame>arv/odom</odom_frame>
         <robot_base_frame>arv</robot_base_frame>
+      </plugin>
+      
+      <plugin
+          filename="ignition-gazebo-ackermann-steering-system"
+          name="ignition::gazebo::systems::AckermannSteering">
+          <left_joint>LEFT_FRONT_WHEEL_JOINT</left_joint>
+          <left_joint>LEFT_REAR_WHEEL_JOINT</left_joint>
+          <right_joint>RIGHT_FRONT_WHEEL_JOINT</right_joint>
+          <right_joint>RIGHT_REAR_WHEEL_JOINT</right_joint>
+          <left_steering_joint>LEFT_HINGE_JOINT</left_steering_joint>
+          <right_steering_joint>RIGHT_HINGE_JOINT</right_steering_joint>
+          <wheel_separation>0.47</wheel_separation>
+          <kingpin_width>0.47</kingpin_width>
+          <wheel_base>0.324</wheel_base>
+          <steering_limit>0.5</steering_limit>
+          <wheel_radius>0.15</wheel_radius>
+          <odom_publish_frequency>50</odom_publish_frequency>
+          <min_velocity>-10</min_velocity>
+          <max_velocity>10</max_velocity>
+          <min_acceleration>-10</min_acceleration>
+          <max_acceleration>10</max_acceleration>
+          <!--
+          <min_jerk>0</min_jerk>
+          <max_jerk>1.0</max_jerk>
+          -->
       </plugin>
     </model>
   </world>

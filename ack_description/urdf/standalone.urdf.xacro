@@ -12,29 +12,4 @@
 
     <xacro:arv/>
     
-    <gazebo>
-        <plugin
-            filename="ignition-gazebo-ackermann-steering-system"
-            name="ignition::gazebo::systems::AckermannSteering">
-            <left_joint>LEFT_FRONT_WHEEL_JOINT</left_joint>
-            <left_joint>LEFT_REAR_WHEEL_JOINT</left_joint>
-            <right_joint>RIGHT_FRONT_WHEEL_JOINT</right_joint>
-            <right_joint>RIGHT_REAR_WHEEL_JOINT</right_joint>
-            <left_steering_joint>LEFT_HINGE_JOINT</left_steering_joint>
-            <right_steering_joint>RIGHT_HINGE_JOINT</right_steering_joint>
-            <wheel_separation>0.47</wheel_separation>
-            <kingpin_width>0.47</kingpin_width>
-            <wheel_base>0.324</wheel_base>
-            <steering_limit>0.5</steering_limit>
-            <wheel_radius>0.15</wheel_radius>
-            <odom_publish_frequency>1</odom_publish_frequency>
-            <min_velocity>-10</min_velocity>
-            <max_velocity>10</max_velocity>
-            <min_acceleration>-10</min_acceleration>
-            <max_acceleration>10</max_acceleration>
-            <min_jerk>-10</min_jerk>
-            <max_jerk>10</max_jerk>
-        </plugin>
-    </gazebo>
-    
 </robot>
