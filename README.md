@@ -7,6 +7,16 @@ Welcome to the ROS2 Humble Ackermann-Steering Car Simulation project! This repos
 ![rviz screenshot](img/rviz.png)
 ![gazebo screenshot](img/gazebo.png)
 
+## The two branches
+
+### main
+
+This uses branch uses Gazebo for everything. Including publishing odom, simulationg sensors, and Gazebo's ackermann-steering plugin.
+
+### ros2_control
+
+Simulates sensors with Gazebo. Control is supported by ros2_control packages.
+
 ## Getting Started
 
 ### Prerequisites
